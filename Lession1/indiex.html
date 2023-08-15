@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- reference to react libary  cdn    alternative to import react from react  -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <!-- quick way to add react libary to the broswer function and feature from   alternative to import react-dom from react-->
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>React ⚛️</title>
+  </head>
+  <body>
+    <!-- The way that react works is that instead of creating these elements on the HTML page, using HTML we're going to instead create them using react, using JavaScript. create a div, and this div will have an ID of root.-->
+    <div id="root"></div>
+    <h1></h1>
+    <!-- Must make this babel so that we can use <></> syntax -->
+    <script type="text/babel">
+      let star = "⭐️";
+      let heat = "🔥";
+      let golf = "⛳️";
+      let name = "Learing react";
+      ReactDOM.render(
+        /* Power of JSX where we can use {} to acesss variable and call function inside {} using . */
+        <div>
+          <h1>Learning React with </h1>
+          <ul>
+            <li>{star}</li>
+            <li>{heat}</li>
+            <li>{golf}</li>
+
+            <li>{name.toUpperCase()}</li>
+            <li>{name.length}</li>
+          </ul>
+        </div>,
+        document.getElementById("root")
+      );
+    </script>
+  </body>
+</html>
