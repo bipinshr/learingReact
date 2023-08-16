@@ -26,3 +26,39 @@ In the component just set the name  <Header name="Bipin" />
 props object as little container where you can place information in for any component.
 render the component = pass the properties into the component
 And then within that component, we'll reference them in the props object with dot notation.
+
+
+L3
+Different Datatype hoe to pass the props 
+const dishes = ["Mashed potato", "Chicken curry", "Pasta", "wings", "Pizza"];
+          Component
+            <Main adjective="great" dishes={dishes} />
+
+    function Main(props) {
+        return (
+          <section>
+            <p>We serve the most {props.adjective} food around</p>
+            <ul>
+              {props.dishes.map((dish) => (
+                <li>{dish}</li>
+              ))}
+            </ul>
+          </section>
+
+Same as the array but this time it is being accessed using props
+
+Solution 
+Unique Key property === id
+Every child in list must have unique id. Why?
+Becauce it might cause rendering issue when added to the arrat list
+Couple of way 
+i in 
+
+Best is to do data trasnformation
+Creating object
+Things to keep in mind while doing dataObject
+the arrow should point to the () insted of {}
+
+
+ Keys help keep your data in sync as your application state changes over time,
+it's really important to add them anytime you're trying to iterate over something and return a dynamic value
