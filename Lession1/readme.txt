@@ -50,3 +50,5 @@ L1.0
 
       FIX: babel 
       generate not supported but brouser and add the create Element TagBase syntax
+      ADD babel link and type into "Text/babel"
+      Not a optimal way but gives idea how it work
