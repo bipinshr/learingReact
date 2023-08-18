@@ -1,11 +1,21 @@
 import { useState, useEffect, useReducer } from "react";
 import "./App.css";
 // import { useRef } from "react";
+
+function useInput(initialValue) {
+  const [value, setValue] = useState(initialValue);
+  return [
+    { value, onChange: (e) => setValue(e.target.value) },
+    //cleanup
+    () => setValue(initialValue),
+  ];
+}
 function App() {
   const [ttitle, setTtitle] = useState("");
   const [color, setColor] = useState("#000000");
   const [weather, setweather] = useState("Sunny");
   const [checked, setChecked] = useReducer((checked) => !checked, false);
+
   // const txtTitile = useRef();
   // const hexColor = useRef();
   const submit = (e) => {
