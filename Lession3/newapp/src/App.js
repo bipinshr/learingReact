@@ -1,19 +1,24 @@
-import { useState, useEffect, useReducer, useRef } from "react";
+import { useState, useEffect, useReducer } from "react";
 import "./App.css";
-
+// import { useRef } from "react";
 function App() {
+  const [ttitle, setTtitle] = useState("");
+  const [color, setColor] = useState("#000000");
   const [weather, setweather] = useState("Sunny");
   const [checked, setChecked] = useReducer((checked) => !checked, false);
-  const txtTitile = useRef();
-  const hexColor = useRef();
+  // const txtTitile = useRef();
+  // const hexColor = useRef();
   const submit = (e) => {
     e.preventDefault();
-    const title = txtTitile.current.value;
-    const hec = hexColor.current.value;
+    // const title = txtTitile.current.value;
+    // const hec = hexColor.current.value;
 
-    alert(`${title}, ${hec}`);
-    txtTitile.current.value = "";
-    hexColor.current.value = "";
+    // alert(`${title}, ${hec}`);
+    // txtTitile.current.value = "";
+    // hexColor.current.value = "";
+    alert(`${ttitle}, ${color}`);
+    setTtitle("");
+    setColor("#000000");
   };
   useEffect(() => {
     console.log(`wether right now is ${weather}`);
@@ -27,11 +32,18 @@ function App() {
       <input type="checkbox" value={checked} onClick={setChecked} />
       <label>{checked ? "checked" : "not Checked"}</label>
 
-      <form onSubmit={submit}>
+      {/* <form onSubmit={submit}>
         <input ref={txtTitile} type="text" placeholder="color" />
         <input ref={hexColor} type="color" />
         <button> Add</button>
-      </form>
+      </form> */}
+      {
+        <form onSubmit={submit}>
+          <input value={ttitle} type="text" placeholder="color" onChange={(event) => setTtitle(event.target.value)} />
+          <input value={color} type="color" onChange={(event) => setColor(event.target.value)} />
+          <button> Add</button>
+        </form>
+      }
     </div>
   );
 }
