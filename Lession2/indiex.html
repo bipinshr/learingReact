@@ -21,6 +21,11 @@
       function Main(props) {
         return (
           <section>
+            <img
+              height={250}
+              src="https://images.pexels.com/photos/17827719/pexels-photo-17827719/free-photo-of-brown-mountain-landscape-with-a-glacier.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt="Mountain" //describe what is in the image
+            />
             <p>We serve the most {props.adjective} food around</p>
             <ul>
               {props.dishes.map((dish) => (

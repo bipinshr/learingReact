@@ -62,3 +62,13 @@ the arrow should point to the () insted of {}
 
  Keys help keep your data in sync as your application state changes over time,
 it's really important to add them anytime you're trying to iterate over something and return a dynamic value
+
+alt is important as it help if the image not displaying or while using assesibility tool
+
+instead of div we can use React.fragments but depending on version of react we can also use 
+
+<>
+
+</>
+
+react, .fragement will not add any thing to dom and will allow to render the child componet with ease
